@@ -7,69 +7,147 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05BC4F8378E1071620E6ABA52AEFB45F /* AMSMB2-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32508C7E5C5FB4D2D65CE8F880C835A9 /* AMSMB2-dummy.m */; };
-		0CDC4A22565536804156939927F4E47F /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A636FEC6E1C7C740D6FF8227AAC8987 /* Context.swift */; };
-		0F89A2446497CA5A66E5DCF3717BAC9F /* ObjCCompat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172A34A29377D45B3C3863BCE4E17AA4 /* ObjCCompat.swift */; };
+		05BC4F8378E1071620E6ABA52AEFB45F /* AMSMB2-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A8DF3AB78D4AC96519FD2D42CEF7C9 /* AMSMB2-dummy.m */; };
+		0B08DFF991597B12F4B73F5E699BC130 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719C61B7B3FFB0C07D9A951960D591ED /* Window.swift */; };
+		0CDC4A22565536804156939927F4E47F /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19795B3BFB97BC9A6D34C3BD8CF058E /* Context.swift */; };
+		0D0FC5FCA5DC6851AA0674A0F436F75C /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4048182FC4DA4B2BC8980F2DACFEC21D /* HUD.swift */; };
+		0F89A2446497CA5A66E5DCF3717BAC9F /* ObjCCompat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94B34EEA6E892A40C5219F97DED74D /* ObjCCompat.swift */; };
+		14035A7A6B8A825357C702BBE6C8848C /* WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CB3D2DC8BAFC7050E067C8AC8CE2 /* WindowRootViewController.swift */; };
+		148F4A8D0E9317AF7E814A558AC16AA7 /* PKHUDWideBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875A8EB20FBBE52FE4404EE4FF08831 /* PKHUDWideBaseView.swift */; };
 		173F49316B7ED3864344006CBBCE7E42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		2A5E2120D11556AB95FEB0EC5BF33102 /* AMSMB2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E463AF5C4DF112C9727C271B58C835 /* AMSMB2.swift */; };
-		38310441F3F33A565DA6DDEB64E50789 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851B00B7E70F0E3E2C661C036419BED /* Directory.swift */; };
-		65C4011B50AFD478AFD46266EE753647 /* Pods-Network File Explorer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EC85865CCA1BE6B1487C43067B9895 /* Pods-Network File Explorer-dummy.m */; };
-		78B08BC17E19C4A7C8C7ABD95C430911 /* Pods-Network File Explorer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EFA55E84B4505DA7128AEE880278935 /* Pods-Network File Explorer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		79D6C40E70EE924FAA8A55A76C63A449 /* Fsctl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F89D6896FB35A0D77C25D5F381D8359 /* Fsctl.swift */; };
-		8B25964454EA58237A2ABD61DB8DE42E /* MSRPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D2E51A257942B7AC458D21269A77D /* MSRPC.swift */; };
-		97B66BD59D775625F736FEA9CA0B3158 /* FileHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67CDF29259858E85957C54AA341A329 /* FileHandle.swift */; };
-		B23FC000077D527417275B42F6A97267 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		DA273D4836DE4B8B738BB095CA11DAD0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6447E5D3E25D40FE453AE0EAF837D5D /* Extensions.swift */; };
-		DE23FB2CF48672A8CBDDCA830EDC51B5 /* AMSMB2-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C7CA8752CBB28739B14E4ABE1CD911FC /* AMSMB2-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		180A266E2AF087B3E947058335E89CE0 /* PKHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095EF40286F81BE0354B499CA0566061 /* PKHUD.swift */; };
+		1F824E58DBB325F219AFB0C9451BE1C8 /* PKHUDAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D61F9A0CAEBF8BA5CF5316D7A562AC0 /* PKHUDAssets.swift */; };
+		274041F62E900CDE0CDB5D8D881A29F0 /* Pods-Network File Explorer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EFA55E84B4505DA7128AEE880278935 /* Pods-Network File Explorer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A5E2120D11556AB95FEB0EC5BF33102 /* AMSMB2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63E0EF20270CA8449F7016A351B260F /* AMSMB2.swift */; };
+		31F445BC870DC65B5DB15B8F51AE9E77 /* PKHUDRotatingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F18F64A60052B4B26936AC000C08D0A /* PKHUDRotatingImageView.swift */; };
+		38310441F3F33A565DA6DDEB64E50789 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665E6689B4C52EB23B1A53AE0F598AB /* Directory.swift */; };
+		39A93C2CC130C7BBC883E0735F630671 /* PKHUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EED1BEBE474E77975D9BC71CC1477D /* PKHUDSuccessView.swift */; };
+		446493C8F226FA8CC9D4D706486FA605 /* PKHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CB411234571F3CE2C524EDE4EEDD3FA /* PKHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54E7808DA4C495BFCA04EC8FA99EF06C /* PKHUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFC2B232E7775A197CA1D9C5E73353 /* PKHUDProgressView.swift */; };
+		606FB101465BA0EC4F2ED1EDE8E152DD /* PKHUDAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E5459038457C9410DF29D04F11ED19 /* PKHUDAnimating.swift */; };
+		675EC1A032DFDD820264B3AE47B297C2 /* PKHUDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1E883915D7910294B83B552040F88 /* PKHUDAnimation.swift */; };
+		74CC65EDC5131F19BA37EB0D200C4837 /* Pods-Network File Explorer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EC85865CCA1BE6B1487C43067B9895 /* Pods-Network File Explorer-dummy.m */; };
+		771FF27CF9018A865BE6AA1C8FDD0646 /* PKHUDResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFCB2D5C605270A32522299AED3B5AE6 /* PKHUDResources.bundle */; };
+		79D6C40E70EE924FAA8A55A76C63A449 /* Fsctl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD525614033ED7431AF16916C2D9889 /* Fsctl.swift */; };
+		8B25964454EA58237A2ABD61DB8DE42E /* MSRPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1BFCBBCA66DC8CE8CFC5D8D9F9096 /* MSRPC.swift */; };
+		9432D6D1CE40B94ACC42309A46DA4C4B /* PKHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EF89934D697FD0667176E95A74433A7A /* PKHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97B66BD59D775625F736FEA9CA0B3158 /* FileHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2729F198DE7CE0AB4A0C333A7205AE67 /* FileHandle.swift */; };
+		9C4229D5D1B5FC7606ECC49F776E64CD /* PKHUDSquareBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DEE8294948A8D9C4493CC27E1F2422 /* PKHUDSquareBaseView.swift */; };
+		A8EA6E398B7FC737D0D92A533D7677E5 /* PKHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA781D681698735FCACC067A29480733 /* PKHUD-dummy.m */; };
+		C30B7978BA033E6E249A2EA3181EB728 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		DA273D4836DE4B8B738BB095CA11DAD0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242572D99F9DDEF3AEB9318C79E1BFCA /* Extensions.swift */; };
+		DB20EB5F12F78130500E8683C2214E11 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F14E5B12D4114BD4FDCAE7D277A5664 /* FrameView.swift */; };
+		DE23FB2CF48672A8CBDDCA830EDC51B5 /* AMSMB2-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D75B518DFBB831A15B1021A868D38C /* AMSMB2-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2A38E421D16111E6DE45070BA0F0A7E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DA3AF01536CFDB7C5E94DDE3095F84D /* Images.xcassets */; };
+		E84C1832305BF7AA61C2E6F99C7369C0 /* PKHUDSystemActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FA26B5936D1C35DE48EE71396D5643 /* PKHUDSystemActivityIndicatorView.swift */; };
+		EF50980DA05BC44D9725C5702FDDD669 /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC87A45237F07EB2077F001B84EC14E /* PKHUDErrorView.swift */; };
+		F2CC01B79708C6CC4DEA8FD3B308C4F7 /* PKHUDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C83597AF86E9A861448A93BC129B4F /* PKHUDTextView.swift */; };
+		F786D1942BEC12F8EE5AC6B9DA1A5520 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FD3367F1502F44DD432CB129DBFA7CBB /* PBXContainerItemProxy */ = {
+		1C1BE9E53A75672F7FE293F5CCD5A0EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 364873017BA37260EF589D44B6B73D21;
+			remoteInfo = PKHUD;
+		};
+		5AE4192867369D3AC14E7CFA2A459F50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3AC170C59659FDB83DE548D1CCAF3A65;
 			remoteInfo = AMSMB2;
 		};
+		C7E4FF5E720A8106ADD14262653F5F38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7F7332F1050B42A501616421AC869EB;
+			remoteInfo = "PKHUD-PKHUDResources";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A636FEC6E1C7C740D6FF8227AAC8987 /* Context.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Context.swift; path = AMSMB2/Context.swift; sourceTree = "<group>"; };
+		05A2656F46E8CA87E77A035911B33D10 /* PKHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PKHUD.framework; path = PKHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0665E6689B4C52EB23B1A53AE0F598AB /* Directory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Directory.swift; path = AMSMB2/Directory.swift; sourceTree = "<group>"; };
+		095EF40286F81BE0354B499CA0566061 /* PKHUD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUD.swift; path = PKHUD/PKHUD.swift; sourceTree = "<group>"; };
+		0974ADF286888C51283EC4EFC9DB3B9C /* PKHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PKHUD.modulemap; sourceTree = "<group>"; };
+		0AFD58A70DB36157169171740EFC81EB /* libsmb2-ios.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libsmb2-ios.a"; path = "libsmb2/lib/libsmb2-ios.a"; sourceTree = "<group>"; };
+		12EED1BEBE474E77975D9BC71CC1477D /* PKHUDSuccessView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDSuccessView.swift; path = PKHUD/PKHUDSuccessView.swift; sourceTree = "<group>"; };
+		137958727CC5D49085104F990161CBFB /* AMSMB2-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AMSMB2-Info.plist"; sourceTree = "<group>"; };
 		1487CF1E63CBA9F23B73983B8FA85CF4 /* Pods-Network File Explorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Network File Explorer.release.xcconfig"; sourceTree = "<group>"; };
-		172A34A29377D45B3C3863BCE4E17AA4 /* ObjCCompat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjCCompat.swift; path = AMSMB2/ObjCCompat.swift; sourceTree = "<group>"; };
-		18CBD9B1BFC320F46E0F1C8EBA16BB81 /* AMSMB2.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AMSMB2.xcconfig; sourceTree = "<group>"; };
-		26E463AF5C4DF112C9727C271B58C835 /* AMSMB2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AMSMB2.swift; path = AMSMB2/AMSMB2.swift; sourceTree = "<group>"; };
+		14A8DF3AB78D4AC96519FD2D42CEF7C9 /* AMSMB2-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AMSMB2-dummy.m"; sourceTree = "<group>"; };
+		242572D99F9DDEF3AEB9318C79E1BFCA /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = AMSMB2/Extensions.swift; sourceTree = "<group>"; };
+		2729F198DE7CE0AB4A0C333A7205AE67 /* FileHandle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileHandle.swift; path = AMSMB2/FileHandle.swift; sourceTree = "<group>"; };
+		2D94B34EEA6E892A40C5219F97DED74D /* ObjCCompat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjCCompat.swift; path = AMSMB2/ObjCCompat.swift; sourceTree = "<group>"; };
+		2DC87A45237F07EB2077F001B84EC14E /* PKHUDErrorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDErrorView.swift; path = PKHUD/PKHUDErrorView.swift; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		32508C7E5C5FB4D2D65CE8F880C835A9 /* AMSMB2-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AMSMB2-dummy.m"; sourceTree = "<group>"; };
-		340D2E51A257942B7AC458D21269A77D /* MSRPC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MSRPC.swift; path = AMSMB2/MSRPC.swift; sourceTree = "<group>"; };
 		38EC85865CCA1BE6B1487C43067B9895 /* Pods-Network File Explorer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Network File Explorer-dummy.m"; sourceTree = "<group>"; };
-		4F89D6896FB35A0D77C25D5F381D8359 /* Fsctl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Fsctl.swift; path = AMSMB2/Fsctl.swift; sourceTree = "<group>"; };
+		4048182FC4DA4B2BC8980F2DACFEC21D /* HUD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HUD.swift; path = PKHUD/HUD.swift; sourceTree = "<group>"; };
+		4BFA0AB645762C994B8A011B1EC4C131 /* AMSMB2.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AMSMB2.xcconfig; sourceTree = "<group>"; };
+		53FA26B5936D1C35DE48EE71396D5643 /* PKHUDSystemActivityIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDSystemActivityIndicatorView.swift; path = PKHUD/PKHUDSystemActivityIndicatorView.swift; sourceTree = "<group>"; };
+		58D75B518DFBB831A15B1021A868D38C /* AMSMB2-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AMSMB2-umbrella.h"; sourceTree = "<group>"; };
 		5B513C7CC9FB30DFF6A2B7A83C42AD48 /* AMSMB2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AMSMB2.framework; path = AMSMB2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65582655AD5A1BB0E0BBB7654491FE68 /* Pods-Network File Explorer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Network File Explorer.debug.xcconfig"; sourceTree = "<group>"; };
-		777079002AFEFF4A0D8F74B9A6FBFA0B /* AMSMB2-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AMSMB2-Info.plist"; sourceTree = "<group>"; };
+		695DDC6BC727917CF19C59B1B24A00E9 /* AMSMB2.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AMSMB2.modulemap; sourceTree = "<group>"; };
+		6D61F9A0CAEBF8BA5CF5316D7A562AC0 /* PKHUDAssets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDAssets.swift; path = PKHUD/PKHUDAssets.swift; sourceTree = "<group>"; };
+		70F1E883915D7910294B83B552040F88 /* PKHUDAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDAnimation.swift; path = PKHUD/PKHUDAnimation.swift; sourceTree = "<group>"; };
+		719C61B7B3FFB0C07D9A951960D591ED /* Window.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Window.swift; path = PKHUD/Window.swift; sourceTree = "<group>"; };
+		7A4917B515C4104EECEC095BD51860A6 /* AMSMB2-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AMSMB2-prefix.pch"; sourceTree = "<group>"; };
+		7AD525614033ED7431AF16916C2D9889 /* Fsctl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Fsctl.swift; path = AMSMB2/Fsctl.swift; sourceTree = "<group>"; };
+		7CB411234571F3CE2C524EDE4EEDD3FA /* PKHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PKHUD.h; path = PKHUD/PKHUD.h; sourceTree = "<group>"; };
+		7F14E5B12D4114BD4FDCAE7D277A5664 /* FrameView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FrameView.swift; path = PKHUD/FrameView.swift; sourceTree = "<group>"; };
+		7F18F64A60052B4B26936AC000C08D0A /* PKHUDRotatingImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDRotatingImageView.swift; path = PKHUD/PKHUDRotatingImageView.swift; sourceTree = "<group>"; };
+		81A1BFCBBCA66DC8CE8CFC5D8D9F9096 /* MSRPC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MSRPC.swift; path = AMSMB2/MSRPC.swift; sourceTree = "<group>"; };
 		8323501EF05D283F95DAC669034C5DDA /* Pods-Network File Explorer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Network File Explorer.modulemap"; sourceTree = "<group>"; };
 		864D5333CF67C25C1922FE3CEFF65838 /* Pods_Network_File_Explorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Network_File_Explorer.framework; path = "Pods-Network File Explorer.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C93128F65A53C9C71A20B8F179E8306 /* libsmb2-ios.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libsmb2-ios.a"; path = "libsmb2/lib/libsmb2-ios.a"; sourceTree = "<group>"; };
+		8875A8EB20FBBE52FE4404EE4FF08831 /* PKHUDWideBaseView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDWideBaseView.swift; path = PKHUD/PKHUDWideBaseView.swift; sourceTree = "<group>"; };
+		8B23CB3D2DC8BAFC7050E067C8AC8CE2 /* WindowRootViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WindowRootViewController.swift; path = PKHUD/WindowRootViewController.swift; sourceTree = "<group>"; };
+		8DA3AF01536CFDB7C5E94DDE3095F84D /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PKHUD/Images.xcassets; sourceTree = "<group>"; };
+		91408B0C33BC26EDA1327C0D90330AB3 /* ResourceBundle-PKHUDResources-PKHUD-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-PKHUDResources-PKHUD-Info.plist"; sourceTree = "<group>"; };
+		98EFC2B232E7775A197CA1D9C5E73353 /* PKHUDProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDProgressView.swift; path = PKHUD/PKHUDProgressView.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EFA55E84B4505DA7128AEE880278935 /* Pods-Network File Explorer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Network File Explorer-umbrella.h"; sourceTree = "<group>"; };
-		A6447E5D3E25D40FE453AE0EAF837D5D /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = AMSMB2/Extensions.swift; sourceTree = "<group>"; };
+		9F50181F7C15D9356C2C8E4F4AED1926 /* PKHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PKHUD.xcconfig; sourceTree = "<group>"; };
+		A1612531BC9ED33D33CF1A4F5F8DDE99 /* PKHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PKHUD-prefix.pch"; sourceTree = "<group>"; };
+		A19795B3BFB97BC9A6D34C3BD8CF058E /* Context.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Context.swift; path = AMSMB2/Context.swift; sourceTree = "<group>"; };
+		A63E0EF20270CA8449F7016A351B260F /* AMSMB2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AMSMB2.swift; path = AMSMB2/AMSMB2.swift; sourceTree = "<group>"; };
+		AA781D681698735FCACC067A29480733 /* PKHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PKHUD-dummy.m"; sourceTree = "<group>"; };
 		ABDAB42728C9A20C421021BEDF1F3DE5 /* Pods-Network File Explorer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Network File Explorer-acknowledgements.plist"; sourceTree = "<group>"; };
+		B0DEE8294948A8D9C4493CC27E1F2422 /* PKHUDSquareBaseView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDSquareBaseView.swift; path = PKHUD/PKHUDSquareBaseView.swift; sourceTree = "<group>"; };
 		B9C5EEB1D8C4444FADA3357EDFA2B270 /* Pods-Network File Explorer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Network File Explorer-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BF003C29390C5D652AF71CC1F55BB538 /* AMSMB2-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AMSMB2-prefix.pch"; sourceTree = "<group>"; };
-		C67CDF29259858E85957C54AA341A329 /* FileHandle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileHandle.swift; path = AMSMB2/FileHandle.swift; sourceTree = "<group>"; };
-		C7CA8752CBB28739B14E4ABE1CD911FC /* AMSMB2-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AMSMB2-umbrella.h"; sourceTree = "<group>"; };
+		B9E5459038457C9410DF29D04F11ED19 /* PKHUDAnimating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDAnimating.swift; path = PKHUD/PKHUDAnimating.swift; sourceTree = "<group>"; };
+		BFCB2D5C605270A32522299AED3B5AE6 /* PKHUDResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = PKHUDResources.bundle; path = "PKHUD-PKHUDResources.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC4B97EC6A9EC5278C1852B98CE7CD38 /* PKHUD-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PKHUD-Info.plist"; sourceTree = "<group>"; };
+		D2C83597AF86E9A861448A93BC129B4F /* PKHUDTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDTextView.swift; path = PKHUD/PKHUDTextView.swift; sourceTree = "<group>"; };
 		D31A658DED67D95015F1181270E5CEFB /* Pods-Network File Explorer-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Network File Explorer-frameworks.sh"; sourceTree = "<group>"; };
-		D70D8FDA90118D2EBB7115CCDE36C5A9 /* AMSMB2.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AMSMB2.modulemap; sourceTree = "<group>"; };
-		D851B00B7E70F0E3E2C661C036419BED /* Directory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Directory.swift; path = AMSMB2/Directory.swift; sourceTree = "<group>"; };
+		EF89934D697FD0667176E95A74433A7A /* PKHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PKHUD-umbrella.h"; sourceTree = "<group>"; };
 		F5CA410723512FFEA87966127D146AC7 /* Pods-Network File Explorer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Network File Explorer-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		545F55CE9C3FE39EDB8E9219B3E0FBF1 /* Frameworks */ = {
+		5965CA0EC8E5353EE2EEBE4B07D4C053 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B23FC000077D527417275B42F6A97267 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		766F7A424E267388A5C0898A61031720 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F786D1942BEC12F8EE5AC6B9DA1A5520 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC837F1F19FCDFC455D287BFC7180634 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C30B7978BA033E6E249A2EA3181EB728 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,15 +162,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		049F7289DF6BD6F6503605FEC2FCD28F /* Support Files */ = {
+		0E42CC85AB6B999EF1BAC1F5C28E49D2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D70D8FDA90118D2EBB7115CCDE36C5A9 /* AMSMB2.modulemap */,
-				18CBD9B1BFC320F46E0F1C8EBA16BB81 /* AMSMB2.xcconfig */,
-				32508C7E5C5FB4D2D65CE8F880C835A9 /* AMSMB2-dummy.m */,
-				777079002AFEFF4A0D8F74B9A6FBFA0B /* AMSMB2-Info.plist */,
-				BF003C29390C5D652AF71CC1F55BB538 /* AMSMB2-prefix.pch */,
-				C7CA8752CBB28739B14E4ABE1CD911FC /* AMSMB2-umbrella.h */,
+				9C8C4CDD28D5FF06DEA88EF8048F6663 /* AMSMB2 */,
+				C95213EFCF1C3A57582AF0D7DE792010 /* PKHUD */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2044DC3711E3523092EA83C584ECB5D5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				695DDC6BC727917CF19C59B1B24A00E9 /* AMSMB2.modulemap */,
+				4BFA0AB645762C994B8A011B1EC4C131 /* AMSMB2.xcconfig */,
+				14A8DF3AB78D4AC96519FD2D42CEF7C9 /* AMSMB2-dummy.m */,
+				137958727CC5D49085104F990161CBFB /* AMSMB2-Info.plist */,
+				7A4917B515C4104EECEC095BD51860A6 /* AMSMB2-prefix.pch */,
+				58D75B518DFBB831A15B1021A868D38C /* AMSMB2-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/AMSMB2";
@@ -123,38 +210,49 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		5D78795CFF46C5579BAEDD7D2A209A35 /* Frameworks */ = {
+		6E888103FD239EFA840FD30F63D86E73 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8C93128F65A53C9C71A20B8F179E8306 /* libsmb2-ios.a */,
+				5B513C7CC9FB30DFF6A2B7A83C42AD48 /* AMSMB2.framework */,
+				05A2656F46E8CA87E77A035911B33D10 /* PKHUD.framework */,
+				BFCB2D5C605270A32522299AED3B5AE6 /* PKHUDResources.bundle */,
+				864D5333CF67C25C1922FE3CEFF65838 /* Pods_Network_File_Explorer.framework */,
 			);
-			name = Frameworks;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		813E847334FC3B279F7A945337D12B7D /* AMSMB2 */ = {
+		8A1C196EC562E5B060943E968A9A017F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				26E463AF5C4DF112C9727C271B58C835 /* AMSMB2.swift */,
-				0A636FEC6E1C7C740D6FF8227AAC8987 /* Context.swift */,
-				D851B00B7E70F0E3E2C661C036419BED /* Directory.swift */,
-				A6447E5D3E25D40FE453AE0EAF837D5D /* Extensions.swift */,
-				C67CDF29259858E85957C54AA341A329 /* FileHandle.swift */,
-				4F89D6896FB35A0D77C25D5F381D8359 /* Fsctl.swift */,
-				340D2E51A257942B7AC458D21269A77D /* MSRPC.swift */,
-				172A34A29377D45B3C3863BCE4E17AA4 /* ObjCCompat.swift */,
-				5D78795CFF46C5579BAEDD7D2A209A35 /* Frameworks */,
-				049F7289DF6BD6F6503605FEC2FCD28F /* Support Files */,
+				8DA3AF01536CFDB7C5E94DDE3095F84D /* Images.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9C8C4CDD28D5FF06DEA88EF8048F6663 /* AMSMB2 */ = {
+			isa = PBXGroup;
+			children = (
+				A63E0EF20270CA8449F7016A351B260F /* AMSMB2.swift */,
+				A19795B3BFB97BC9A6D34C3BD8CF058E /* Context.swift */,
+				0665E6689B4C52EB23B1A53AE0F598AB /* Directory.swift */,
+				242572D99F9DDEF3AEB9318C79E1BFCA /* Extensions.swift */,
+				2729F198DE7CE0AB4A0C333A7205AE67 /* FileHandle.swift */,
+				7AD525614033ED7431AF16916C2D9889 /* Fsctl.swift */,
+				81A1BFCBBCA66DC8CE8CFC5D8D9F9096 /* MSRPC.swift */,
+				2D94B34EEA6E892A40C5219F97DED74D /* ObjCCompat.swift */,
+				A60B5BAF84E3AF3299FE3DBEC2E32772 /* Frameworks */,
+				2044DC3711E3523092EA83C584ECB5D5 /* Support Files */,
 			);
 			name = AMSMB2;
 			path = AMSMB2;
 			sourceTree = "<group>";
 		};
-		91176BD079878AC6707F14F314AF365E /* Pods */ = {
+		A60B5BAF84E3AF3299FE3DBEC2E32772 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				813E847334FC3B279F7A945337D12B7D /* AMSMB2 */,
+				0AFD58A70DB36157169171740EFC81EB /* libsmb2-ios.a */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -165,13 +263,31 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		C3B4420BBA8DF5C8591BB0845B228DFE /* Products */ = {
+		C95213EFCF1C3A57582AF0D7DE792010 /* PKHUD */ = {
 			isa = PBXGroup;
 			children = (
-				5B513C7CC9FB30DFF6A2B7A83C42AD48 /* AMSMB2.framework */,
-				864D5333CF67C25C1922FE3CEFF65838 /* Pods_Network_File_Explorer.framework */,
+				7F14E5B12D4114BD4FDCAE7D277A5664 /* FrameView.swift */,
+				4048182FC4DA4B2BC8980F2DACFEC21D /* HUD.swift */,
+				7CB411234571F3CE2C524EDE4EEDD3FA /* PKHUD.h */,
+				095EF40286F81BE0354B499CA0566061 /* PKHUD.swift */,
+				B9E5459038457C9410DF29D04F11ED19 /* PKHUDAnimating.swift */,
+				70F1E883915D7910294B83B552040F88 /* PKHUDAnimation.swift */,
+				6D61F9A0CAEBF8BA5CF5316D7A562AC0 /* PKHUDAssets.swift */,
+				2DC87A45237F07EB2077F001B84EC14E /* PKHUDErrorView.swift */,
+				98EFC2B232E7775A197CA1D9C5E73353 /* PKHUDProgressView.swift */,
+				7F18F64A60052B4B26936AC000C08D0A /* PKHUDRotatingImageView.swift */,
+				B0DEE8294948A8D9C4493CC27E1F2422 /* PKHUDSquareBaseView.swift */,
+				12EED1BEBE474E77975D9BC71CC1477D /* PKHUDSuccessView.swift */,
+				53FA26B5936D1C35DE48EE71396D5643 /* PKHUDSystemActivityIndicatorView.swift */,
+				D2C83597AF86E9A861448A93BC129B4F /* PKHUDTextView.swift */,
+				8875A8EB20FBBE52FE4404EE4FF08831 /* PKHUDWideBaseView.swift */,
+				719C61B7B3FFB0C07D9A951960D591ED /* Window.swift */,
+				8B23CB3D2DC8BAFC7050E067C8AC8CE2 /* WindowRootViewController.swift */,
+				8A1C196EC562E5B060943E968A9A017F /* Resources */,
+				E1AB7D575942817AC5689A07733A86F0 /* Support Files */,
 			);
-			name = Products;
+			name = PKHUD;
+			path = PKHUD;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -179,8 +295,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				91176BD079878AC6707F14F314AF365E /* Pods */,
-				C3B4420BBA8DF5C8591BB0845B228DFE /* Products */,
+				0E42CC85AB6B999EF1BAC1F5C28E49D2 /* Pods */,
+				6E888103FD239EFA840FD30F63D86E73 /* Products */,
 				5D29DC1F77AA1C888DF4F7D1C1166F02 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -193,9 +309,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E1AB7D575942817AC5689A07733A86F0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0974ADF286888C51283EC4EFC9DB3B9C /* PKHUD.modulemap */,
+				9F50181F7C15D9356C2C8E4F4AED1926 /* PKHUD.xcconfig */,
+				AA781D681698735FCACC067A29480733 /* PKHUD-dummy.m */,
+				CC4B97EC6A9EC5278C1852B98CE7CD38 /* PKHUD-Info.plist */,
+				A1612531BC9ED33D33CF1A4F5F8DDE99 /* PKHUD-prefix.pch */,
+				EF89934D697FD0667176E95A74433A7A /* PKHUD-umbrella.h */,
+				91408B0C33BC26EDA1327C0D90330AB3 /* ResourceBundle-PKHUDResources-PKHUD-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PKHUD";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0FCAF2DF239807E75743F30EDA79FB00 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				274041F62E900CDE0CDB5D8D881A29F0 /* Pods-Network File Explorer-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		386F983E0547CC24791B41B4FDE16C38 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -204,11 +343,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FE83FDCC2591715012EEC11069FAF32B /* Headers */ = {
+		D8254C544A8F81DBE6028766B85010C7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78B08BC17E19C4A7C8C7ABD95C430911 /* Pods-Network File Explorer-umbrella.h in Headers */,
+				9432D6D1CE40B94ACC42309A46DA4C4B /* PKHUD-umbrella.h in Headers */,
+				446493C8F226FA8CC9D4D706486FA605 /* PKHUD.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,21 +357,41 @@
 /* Begin PBXNativeTarget section */
 		2282976C05274F18790ED0DDF8B9BF61 /* Pods-Network File Explorer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7512BB3769D8DB8B03C3CBD18D71DEA2 /* Build configuration list for PBXNativeTarget "Pods-Network File Explorer" */;
+			buildConfigurationList = 5CF14C3F0200FECE1A0839CDD6D759FF /* Build configuration list for PBXNativeTarget "Pods-Network File Explorer" */;
 			buildPhases = (
-				FE83FDCC2591715012EEC11069FAF32B /* Headers */,
-				DBB9BB7B7EF9D87C383DBBF045D844D0 /* Sources */,
-				545F55CE9C3FE39EDB8E9219B3E0FBF1 /* Frameworks */,
-				0BA0F27ECB1C4B09965FC0EDB01EF852 /* Resources */,
+				0FCAF2DF239807E75743F30EDA79FB00 /* Headers */,
+				62D55E935807D4AE28477D17DAFF1F82 /* Sources */,
+				AC837F1F19FCDFC455D287BFC7180634 /* Frameworks */,
+				589B927213F71BE2D6DB341BFC6B3D7E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DB079E3766483CC8B8CEEF20D92DD4D2 /* PBXTargetDependency */,
+				A54479969F19F9AA30F527E2F648BBB2 /* PBXTargetDependency */,
+				BD9EB4A8A9C81005DBFE951E67A05B0F /* PBXTargetDependency */,
 			);
 			name = "Pods-Network File Explorer";
 			productName = "Pods-Network File Explorer";
 			productReference = 864D5333CF67C25C1922FE3CEFF65838 /* Pods_Network_File_Explorer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		364873017BA37260EF589D44B6B73D21 /* PKHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF1F2FE4505305B2AD57B3C33848F4E0 /* Build configuration list for PBXNativeTarget "PKHUD" */;
+			buildPhases = (
+				D8254C544A8F81DBE6028766B85010C7 /* Headers */,
+				D1491D3A27F6A01508D7198421E73BDC /* Sources */,
+				766F7A424E267388A5C0898A61031720 /* Frameworks */,
+				37FD88FFFFD02C5987264EF24DC0EA17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0B5AEB9E7BE93EEF65D812DA21A2B86D /* PBXTargetDependency */,
+			);
+			name = PKHUD;
+			productName = PKHUD;
+			productReference = 05A2656F46E8CA87E77A035911B33D10 /* PKHUD.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		3AC170C59659FDB83DE548D1CCAF3A65 /* AMSMB2 */ = {
@@ -252,6 +412,23 @@
 			productReference = 5B513C7CC9FB30DFF6A2B7A83C42AD48 /* AMSMB2.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		A7F7332F1050B42A501616421AC869EB /* PKHUD-PKHUDResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A87479FF8902694C7145DC60E11837E /* Build configuration list for PBXNativeTarget "PKHUD-PKHUDResources" */;
+			buildPhases = (
+				1BAFE9CA1767C49CCA30ABD1382949C4 /* Sources */,
+				5965CA0EC8E5353EE2EEBE4B07D4C053 /* Frameworks */,
+				61C29A22F2D8A5D7115987E9EB433102 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PKHUD-PKHUDResources";
+			productName = "PKHUD-PKHUDResources";
+			productReference = BFCB2D5C605270A32522299AED3B5AE6 /* PKHUDResources.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -269,21 +446,39 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = C3B4420BBA8DF5C8591BB0845B228DFE /* Products */;
+			productRefGroup = 6E888103FD239EFA840FD30F63D86E73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				3AC170C59659FDB83DE548D1CCAF3A65 /* AMSMB2 */,
+				364873017BA37260EF589D44B6B73D21 /* PKHUD */,
+				A7F7332F1050B42A501616421AC869EB /* PKHUD-PKHUDResources */,
 				2282976C05274F18790ED0DDF8B9BF61 /* Pods-Network File Explorer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0BA0F27ECB1C4B09965FC0EDB01EF852 /* Resources */ = {
+		37FD88FFFFD02C5987264EF24DC0EA17 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771FF27CF9018A865BE6AA1C8FDD0646 /* PKHUDResources.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		589B927213F71BE2D6DB341BFC6B3D7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61C29A22F2D8A5D7115987E9EB433102 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2A38E421D16111E6DE45070BA0F0A7E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +492,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1BAFE9CA1767C49CCA30ABD1382949C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62D55E935807D4AE28477D17DAFF1F82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74CC65EDC5131F19BA37EB0D200C4837 /* Pods-Network File Explorer-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		77CE2948651B81BF81CECD0ED306DE95 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -313,26 +523,70 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DBB9BB7B7EF9D87C383DBBF045D844D0 /* Sources */ = {
+		D1491D3A27F6A01508D7198421E73BDC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65C4011B50AFD478AFD46266EE753647 /* Pods-Network File Explorer-dummy.m in Sources */,
+				DB20EB5F12F78130500E8683C2214E11 /* FrameView.swift in Sources */,
+				0D0FC5FCA5DC6851AA0674A0F436F75C /* HUD.swift in Sources */,
+				A8EA6E398B7FC737D0D92A533D7677E5 /* PKHUD-dummy.m in Sources */,
+				180A266E2AF087B3E947058335E89CE0 /* PKHUD.swift in Sources */,
+				606FB101465BA0EC4F2ED1EDE8E152DD /* PKHUDAnimating.swift in Sources */,
+				675EC1A032DFDD820264B3AE47B297C2 /* PKHUDAnimation.swift in Sources */,
+				1F824E58DBB325F219AFB0C9451BE1C8 /* PKHUDAssets.swift in Sources */,
+				EF50980DA05BC44D9725C5702FDDD669 /* PKHUDErrorView.swift in Sources */,
+				54E7808DA4C495BFCA04EC8FA99EF06C /* PKHUDProgressView.swift in Sources */,
+				31F445BC870DC65B5DB15B8F51AE9E77 /* PKHUDRotatingImageView.swift in Sources */,
+				9C4229D5D1B5FC7606ECC49F776E64CD /* PKHUDSquareBaseView.swift in Sources */,
+				39A93C2CC130C7BBC883E0735F630671 /* PKHUDSuccessView.swift in Sources */,
+				E84C1832305BF7AA61C2E6F99C7369C0 /* PKHUDSystemActivityIndicatorView.swift in Sources */,
+				F2CC01B79708C6CC4DEA8FD3B308C4F7 /* PKHUDTextView.swift in Sources */,
+				148F4A8D0E9317AF7E814A558AC16AA7 /* PKHUDWideBaseView.swift in Sources */,
+				0B08DFF991597B12F4B73F5E699BC130 /* Window.swift in Sources */,
+				14035A7A6B8A825357C702BBE6C8848C /* WindowRootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DB079E3766483CC8B8CEEF20D92DD4D2 /* PBXTargetDependency */ = {
+		0B5AEB9E7BE93EEF65D812DA21A2B86D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PKHUD-PKHUDResources";
+			target = A7F7332F1050B42A501616421AC869EB /* PKHUD-PKHUDResources */;
+			targetProxy = C7E4FF5E720A8106ADD14262653F5F38 /* PBXContainerItemProxy */;
+		};
+		A54479969F19F9AA30F527E2F648BBB2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AMSMB2;
 			target = 3AC170C59659FDB83DE548D1CCAF3A65 /* AMSMB2 */;
-			targetProxy = FD3367F1502F44DD432CB129DBFA7CBB /* PBXContainerItemProxy */;
+			targetProxy = 5AE4192867369D3AC14E7CFA2A459F50 /* PBXContainerItemProxy */;
+		};
+		BD9EB4A8A9C81005DBFE951E67A05B0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PKHUD;
+			target = 364873017BA37260EF589D44B6B73D21 /* PKHUD */;
+			targetProxy = 1C1BE9E53A75672F7FE293F5CCD5A0EF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0335776E175E96846CE17BB206DC8ACF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F50181F7C15D9356C2C8E4F4AED1926 /* PKHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/PKHUD";
+				INFOPLIST_FILE = "Target Support Files/PKHUD/ResourceBundle-PKHUDResources-PKHUD-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = PKHUDResources;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		1422B121EAEAEA11307496903FA623C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -393,9 +647,48 @@
 			};
 			name = Release;
 		};
+		1A4175CB742A13003F3412259B0A73EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1487CF1E63CBA9F23B73983B8FA85CF4 /* Pods-Network File Explorer.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Network File Explorer/Pods-Network File Explorer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Network File Explorer/Pods-Network File Explorer.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		1C9461FA0ACA87AF358416F5DA905345 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18CBD9B1BFC320F46E0F1C8EBA16BB81 /* AMSMB2.xcconfig */;
+			baseConfigurationReference = 4BFA0AB645762C994B8A011B1EC4C131 /* AMSMB2.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -428,7 +721,7 @@
 			};
 			name = Debug;
 		};
-		37C66A556D8557897D72201A243A0B19 /* Debug */ = {
+		22610EA522AB16BF3857F65A682613D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 65582655AD5A1BB0E0BBB7654491FE68 /* Pods-Network File Explorer.debug.xcconfig */;
 			buildSettings = {
@@ -466,9 +759,45 @@
 			};
 			name = Debug;
 		};
+		40D8791AAF7E6145E7C04E76C2012795 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F50181F7C15D9356C2C8E4F4AED1926 /* PKHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PKHUD/PKHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PKHUD/PKHUD-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PKHUD/PKHUD.modulemap";
+				PRODUCT_MODULE_NAME = PKHUD;
+				PRODUCT_NAME = PKHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		46DF2C65A5446E3868780637B04A6294 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18CBD9B1BFC320F46E0F1C8EBA16BB81 /* AMSMB2.xcconfig */;
+			baseConfigurationReference = 4BFA0AB645762C994B8A011B1EC4C131 /* AMSMB2.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -501,6 +830,57 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		923751CD338E82920DF3B5946FCC590B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F50181F7C15D9356C2C8E4F4AED1926 /* PKHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/PKHUD";
+				INFOPLIST_FILE = "Target Support Files/PKHUD/ResourceBundle-PKHUDResources-PKHUD-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = PKHUDResources;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		971B22701E26CA9F298D2B6FD26C44C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F50181F7C15D9356C2C8E4F4AED1926 /* PKHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PKHUD/PKHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PKHUD/PKHUD-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PKHUD/PKHUD.modulemap";
+				PRODUCT_MODULE_NAME = PKHUD;
+				PRODUCT_NAME = PKHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		ED7888FA6713EABBF66D26A8003AD1CA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -566,48 +946,18 @@
 			};
 			name = Debug;
 		};
-		EE41ED84E857B2513D96C6AC1D0632A5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1487CF1E63CBA9F23B73983B8FA85CF4 /* Pods-Network File Explorer.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Network File Explorer/Pods-Network File Explorer-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Network File Explorer/Pods-Network File Explorer.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2A87479FF8902694C7145DC60E11837E /* Build configuration list for PBXNativeTarget "PKHUD-PKHUDResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0335776E175E96846CE17BB206DC8ACF /* Debug */,
+				923751CD338E82920DF3B5946FCC590B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -617,11 +967,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7512BB3769D8DB8B03C3CBD18D71DEA2 /* Build configuration list for PBXNativeTarget "Pods-Network File Explorer" */ = {
+		5CF14C3F0200FECE1A0839CDD6D759FF /* Build configuration list for PBXNativeTarget "Pods-Network File Explorer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				37C66A556D8557897D72201A243A0B19 /* Debug */,
-				EE41ED84E857B2513D96C6AC1D0632A5 /* Release */,
+				22610EA522AB16BF3857F65A682613D7 /* Debug */,
+				1A4175CB742A13003F3412259B0A73EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -631,6 +981,15 @@
 			buildConfigurations = (
 				1C9461FA0ACA87AF358416F5DA905345 /* Debug */,
 				46DF2C65A5446E3868780637B04A6294 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF1F2FE4505305B2AD57B3C33848F4E0 /* Build configuration list for PBXNativeTarget "PKHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				971B22701E26CA9F298D2B6FD26C44C3 /* Debug */,
+				40D8791AAF7E6145E7C04E76C2012795 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

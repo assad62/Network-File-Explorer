@@ -6,6 +6,7 @@ target 'Network File Explorer' do
   use_frameworks!
 
   pod "AMSMB2"
+  pod 'PKHUD', '~> 5.0'
   # Pods for Network File Explorer
 
 end

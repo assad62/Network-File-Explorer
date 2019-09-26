@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		2B6E6329233D0F380042E590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B6E6327233D0F380042E590 /* Main.storyboard */; };
 		2B6E632B233D0F3B0042E590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B6E632A233D0F3B0042E590 /* Assets.xcassets */; };
 		2B6E632E233D0F3B0042E590 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B6E632C233D0F3B0042E590 /* LaunchScreen.storyboard */; };
+		2B6E6336233D15640042E590 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6E6335233D15630042E590 /* MasterViewController.swift */; };
 		C05F705D6060CCF09F700925 /* Pods_Network_File_Explorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E50CC48CABA82AE62C9ABEAF /* Pods_Network_File_Explorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		2B6E632A233D0F3B0042E590 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B6E632D233D0F3B0042E590 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B6E632F233D0F3B0042E590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B6E6335233D15630042E590 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		59C26085917EE07D863DCE19 /* Pods-Network File Explorer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network File Explorer.debug.xcconfig"; path = "Target Support Files/Pods-Network File Explorer/Pods-Network File Explorer.debug.xcconfig"; sourceTree = "<group>"; };
 		E50CC48CABA82AE62C9ABEAF /* Pods_Network_File_Explorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Network_File_Explorer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A6E996F8566DBEF2B78FDF /* Pods-Network File Explorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network File Explorer.release.xcconfig"; path = "Target Support Files/Pods-Network File Explorer/Pods-Network File Explorer.release.xcconfig"; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		2B6E6320233D0F380042E590 /* Network File Explorer */ = {
 			isa = PBXGroup;
 			children = (
+				2B6E6335233D15630042E590 /* MasterViewController.swift */,
 				2B6E6321233D0F380042E590 /* AppDelegate.swift */,
 				2B6E6323233D0F380042E590 /* SceneDelegate.swift */,
 				2B6E6325233D0F380042E590 /* ViewController.swift */,
@@ -88,7 +91,6 @@
 				59C26085917EE07D863DCE19 /* Pods-Network File Explorer.debug.xcconfig */,
 				E9A6E996F8566DBEF2B78FDF /* Pods-Network File Explorer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B6E6336233D15640042E590 /* MasterViewController.swift in Sources */,
 				2B6E6326233D0F380042E590 /* ViewController.swift in Sources */,
 				2B6E6322233D0F380042E590 /* AppDelegate.swift in Sources */,
 				2B6E6324233D0F380042E590 /* SceneDelegate.swift in Sources */,
@@ -357,6 +360,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 46KXY72VBZ;
 				INFOPLIST_FILE = "Network File Explorer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -364,7 +368,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mohammadassad.Network-File-Explorer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -376,6 +380,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 46KXY72VBZ;
 				INFOPLIST_FILE = "Network File Explorer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,7 +388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mohammadassad.Network-File-Explorer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
