@@ -1,0 +1,6 @@
+framework module AMSMB2 {
+  umbrella header "AMSMB2-umbrella.h"
+
+  export *
+  module * { export * }
+}
