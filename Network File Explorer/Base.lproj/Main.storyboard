@@ -11,17 +11,38 @@
         <!--View Controller-->
         <scene sceneID="hUS-SJ-AXr">
             <objects>
-                <viewController id="EoG-Fg-ZOD" sceneMemberID="viewController">
+                <viewController id="EoG-Fg-ZOD" customClass="ViewController" customModule="Network_File_Explorer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x4E-co-d4f">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wnb-lI-Y9n">
+                                <rect key="frame" x="343" y="481.5" width="82" height="61"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oXa-Ui-19g">
+                                        <rect key="frame" x="0.0" y="0.0" width="82" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wnb-lI-Y9n" firstAttribute="centerX" secondItem="x4E-co-d4f" secondAttribute="centerX" id="LIq-kI-IOb"/>
+                            <constraint firstItem="wnb-lI-Y9n" firstAttribute="centerY" secondItem="x4E-co-d4f" secondAttribute="centerY" id="pSH-NS-raz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ntm-pg-Flg"/>
                     </view>
+                    <connections>
+                        <outlet property="descLabel" destination="oXa-Ui-19g" id="JMn-dN-7ql"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9DP-Re-Q1b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="35"/>
+            <point key="canvasLocation" x="900" y="122"/>
         </scene>
         <!--Network File Explorer-->
         <scene sceneID="JKI-VB-mTR">

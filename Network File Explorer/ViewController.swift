@@ -7,11 +7,28 @@
 //
 
 import UIKit
+import SwiftEventBus
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController{
+    
+    
+     
+   
+    
+    @IBOutlet weak var descLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SwiftEventBus.onMainThread(self, name: "masterCellClicked") {
+            result in
+           
+            let type : PathType = result?.object as! PathType
+            
+            self.descLabel.text = type.pathType;
+            // UI thread
+        }
+
         // Do any additional setup after loading the view.
     }
 

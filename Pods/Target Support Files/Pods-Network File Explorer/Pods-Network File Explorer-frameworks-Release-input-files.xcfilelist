@@ -1,3 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-Network File Explorer/Pods-Network File Explorer-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AMSMB2/AMSMB2.framework
 ${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework
+${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
+${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/SwiftEventBus/SwiftEventBus.framework
