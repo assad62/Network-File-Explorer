@@ -13,19 +13,12 @@ typealias smb2dir = OpaquePointer
 
 /// NO THREAD-SAFE
 final class SMB2Directory: Collection {
-    
-    typealias Index = Int
-    
     private var context: SMB2Context
     private var handle: smb2dir
     
     init(_ path: String, on context: SMB2Context) throws {
-        let (_, cmddata) = try context.async_await(defaultError: .ENOENT) { (context, cbPtr) -> Int32 in
+        let (_, handle) = try context.async_await(dataHandler: Parser.toOpaquePointer) { (context, cbPtr) -> Int32 in
             smb2_opendir_async(context, path, SMB2Context.generic_handler, cbPtr)
-        }
-        
-        guard let handle = OpaquePointer(cmddata) else {
-            throw POSIXError(.ENOTDIR)
         }
         
         self.context = context
@@ -33,15 +26,18 @@ final class SMB2Directory: Collection {
     }
     
     deinit {
+        let handle = self.handle
         try? context.withThreadSafeContext { (context) in
             smb2_closedir(context, handle)
         }
     }
     
     func makeIterator() -> AnyIterator<smb2dirent> {
-        smb2_rewinddir(context.context, handle)
+        let context = self.context.context
+        let handle = self.handle
+        smb2_rewinddir(context, handle)
         return AnyIterator {
-            return smb2_readdir(self.context.context, self.handle)?.move()
+            return smb2_readdir(context, self.handle)?.pointee
         }
     }
     
@@ -50,30 +46,34 @@ final class SMB2Directory: Collection {
     }
     
     var endIndex: Int {
-        return self.count
+        return count
     }
     
     var count: Int {
-        let currentPos = smb2_telldir(context.context, handle)
+        let context = self.context.context
+        let handle = self.handle
+        let currentPos = smb2_telldir(context, handle)
         defer {
-            smb2_seekdir(context.context, handle, currentPos)
+            smb2_seekdir(context, handle, currentPos)
         }
         
-        smb2_rewinddir(context.context, handle)
+        smb2_rewinddir(context, handle)
         var i = 0
-        while smb2_readdir(context.context, handle) != nil {
+        while smb2_readdir(context, handle) != nil {
             i += 1
         }
         return i
     }
     
     subscript(position: Int) -> smb2dirent {
-        let currentPos = smb2_telldir(context.context, handle)
-        smb2_seekdir(context.context, handle, 0)
+        let context = self.context.context
+        let handle = self.handle
+        let currentPos = smb2_telldir(context, handle)
+        smb2_seekdir(context, handle, 0)
         defer {
-            smb2_seekdir(context.context, handle, currentPos)
+            smb2_seekdir(context, handle, currentPos)
         }
-        return smb2_readdir(context.context, handle).move()
+        return smb2_readdir(context, handle).move()
     }
     
     func index(after i: Int) -> Int {

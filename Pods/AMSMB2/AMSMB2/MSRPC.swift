@@ -9,11 +9,10 @@
 import Foundation
 
 class MSRPC {
-    static func parseNetShareEnumAllLevel1(data: Data) throws
-        -> [(name: String, props: ShareProperties, comment: String)]
+    static func parseNetShareEnumAllLevel1<DataType: DataProtocol>(data: DataType) throws -> [SMB2Share]
     {
-        var shares = [(name: String, props: ShareProperties, comment: String)]()
-        
+        var shares = [SMB2Share]()
+        let data = Data(data)
         /*
          Data Layout :
          
@@ -42,9 +41,7 @@ class MSRPC {
         }
         
         // Count of shares to be enumerated, [44-47]
-        guard let count = data.scanInt(offset: 44, as: UInt32.self) else {
-            throw POSIXError(.EBADMSG)
-        }
+        let count = try data.scanInt(offset: 44, as: UInt32.self).unwrap()
         
         // start of nameString structs header size + (_SHARE_INFO_1 * count)
         var offset = 48 + count * 12
@@ -53,9 +50,7 @@ class MSRPC {
             let type = data.scanValue(offset: typeOffset(i), as: UInt32.self) ?? 0xffffffff
             
             // Parse name part
-            guard let nameActualCount = data.scanInt(offset: offset + 8, as: UInt32.self) else {
-                throw POSIXError(.EBADRPC)
-            }
+            let nameActualCount = try data.scanInt(offset: offset + 8, as: UInt32.self).unwrap()
             
             offset += 12
             if offset + nameActualCount * 2 > data.count {
@@ -74,9 +69,7 @@ class MSRPC {
             }
             
             // Parse comment part
-            guard let commentActualCount = data.scanInt(offset: offset + 8, as: UInt32.self) else {
-                throw POSIXError(.EBADRPC)
-            }
+            let commentActualCount = try data.scanInt(offset: offset + 8, as: UInt32.self).unwrap()
             
             offset += 12
             if offset + commentActualCount * 2 > data.count {
@@ -95,7 +88,7 @@ class MSRPC {
                 offset += 2
             }
             
-            shares.append((name: nameString, props: ShareProperties(rawValue: type), comment: commentString))
+            shares.append(.init(name: nameString, props: ShareProperties(rawValue: type), comment: commentString))
             
             if offset > data.count {
                 break
@@ -134,9 +127,9 @@ class MSRPC {
     static func srvsvcBindData() -> Data {
         var reqData = dceHeader(command: .bind, callId: 1)
         // Max Xmit size
-        reqData.append(value: UInt16.max)
+        reqData.append(value: Int16.max)
         // Max Recv size
-        reqData.append(value: UInt16.max)
+        reqData.append(value: Int16.max)
         // Assoc group
         reqData.append(value: 0 as UInt32)
         // Num Ctx Item
@@ -210,5 +203,22 @@ class MSRPC {
         
         setDCELength(&reqData)
         return reqData
+    }
+    
+    static func validateBindData<DataType: DataProtocol>(_ recvBindData: DataType) throws {
+        // Bind command result is exactly 68 bytes here. 54 + ("\PIPE\srvsvc" ascii length + 1 byte padding).
+        if recvBindData.count < 68 {
+            throw POSIXError(.EBADMSG, description:  "Binding failure: Invalid size")
+        }
+        
+        // These bytes contains Ack result, 30 + ("\PIPE\srvsvc" ascii length + 1 byte padding).
+        let byte44 = recvBindData[recvBindData.index(recvBindData.startIndex, offsetBy: 44)]
+        let byte45 = recvBindData[recvBindData.index(recvBindData.startIndex, offsetBy: 45)]
+        if byte44 > 0 || byte45 > 0 {
+            // Ack result is not acceptance (0x0000)
+            let errorCode = UInt16(byte44) + (UInt16(byte45) << 8)
+            let errorCodeString = String(errorCode, radix: 16, uppercase: false)
+            throw POSIXError(.EBADMSG, description:  "Binding failure: \(errorCodeString)")
+        }
     }
 }

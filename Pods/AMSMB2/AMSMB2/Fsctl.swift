@@ -11,6 +11,43 @@ import SMB2
 
 protocol DataInitializable {
     init(data: Data) throws
+    static func empty() throws -> Self
+}
+
+extension Data: DataInitializable {
+    init(data: Data) throws {
+        self = data
+    }
+    
+    static func empty() throws -> Data {
+        return .init()
+    }
+}
+
+protocol FcntlDataProtocol: DataProtocol { }
+
+extension FcntlDataProtocol {
+    var startIndex: Int {
+        return 0
+    }
+    
+    var endIndex: Int {
+        return regions.first!.endIndex as! Int
+    }
+    
+    subscript(index: Int) -> UInt8 {
+        get {
+            let regionOne = regions.first!
+            return regionOne[regionOne.index(regionOne.startIndex, offsetBy: index)]
+        }
+    }
+    func index(after i: Int) -> Int {
+        return i + 1
+    }
+    
+    func withContiguousStorageIfAvailable<R>(_ body: (UnsafeBufferPointer<UInt8>) throws -> R) rethrows -> R? {
+        return try (regions.first! as! Data).withContiguousStorageIfAvailable(body)
+    }
 }
 
 struct IOCtl {
@@ -29,29 +66,14 @@ struct IOCtl {
         static let srvReadHash = Command(rawValue: UInt32(SMB2_FSCTL_SRV_READ_HASH))
         static let lmrRequestResilency = Command(rawValue: UInt32(SMB2_FSCTL_LMR_REQUEST_RESILIENCY))
         static let queryNetworkInterfaceInfo = Command(rawValue: UInt32(SMB2_FSCTL_QUERY_NETWORK_INTERFACE_INFO))
+        static let getReparsePoint = Command(rawValue: UInt32(SMB2_FSCTL_GET_REPARSE_POINT))
         static let setReparsePoint = Command(rawValue: UInt32(SMB2_FSCTL_SET_REPARSE_POINT))
-        static let getReparsePoint = Command(rawValue: 0x000900A8)
         static let deleteReparsePoint = Command(rawValue: 0x000900AC)
         static let fileLevelTrim = Command(rawValue: UInt32(SMB2_FSCTL_FILE_LEVEL_TRIM))
         static let validateNegotiateInfo = Command(rawValue: UInt32(SMB2_FSCTL_VALIDATE_NEGOTIATE_INFO))
-        
-        var maxResponseSize: Int {
-            switch self {
-            case .pipeWait, .lmrRequestResilency:
-                return 0
-            case .srvCopyChunk, .srvCopyChunkWrite:
-                return 12
-            case .srvRequestResumeKey:
-                return 32
-            case .queryNetworkInterfaceInfo:
-                return 152
-            default:
-                return Int.max
-            }
-        }
     }
     
-    struct SrvCopyChunk: DataProtocol {
+    struct SrvCopyChunk: FcntlDataProtocol {
         let sourceOffset: UInt64
         let targetOffset: UInt64
         let length: UInt32
@@ -64,14 +86,9 @@ struct IOCtl {
             data.append(value: 0 as UInt32)
             return CollectionOfOne(data)
         }
-        
-        var startIndex: Int { return 0 }
-        var endIndex: Int { return MemoryLayout.size(ofValue: self) }
-        subscript(index: Int) -> UInt8 { get { return regions[0][index] } }
-        func index(after i: Int) -> Int { return i + 1 }
     }
     
-    struct SrvCopyChunkCopy: DataProtocol {
+    struct SrvCopyChunkCopy: FcntlDataProtocol {
         let sourceKey: Data
         let chunks: [SrvCopyChunk]
         
@@ -83,11 +100,6 @@ struct IOCtl {
             chunks.forEach { data.append($0.regions[0]) }
             return CollectionOfOne(data)
         }
-        
-        var startIndex: Int { return 0 }
-        var endIndex: Int { return MemoryLayout.size(ofValue: self) }
-        subscript(index: Int) -> UInt8 { get { return regions[0][index] } }
-        func index(after i: Int) -> Int { return i + 1 }
     }
     
     struct RequestResumeKey: DataInitializable {
@@ -99,10 +111,14 @@ struct IOCtl {
             }
             self.resumeKey = data.prefix(24)
         }
+        
+        static func empty() throws -> RequestResumeKey {
+            throw POSIXError(.ENODATA, description: "Invalid Resume Key")
+        }
     }
     /*
-    struct SymbolicLinkReparse: DataInitializable, DataProtocol {
-        static private let headerLength = 16
+    struct SymbolicLinkReparse: DataInitializable, FcntlDataProtocol {
+        static private let headerLength = 20
         private let reparseTag: UInt32 = 0xA000000C
         let substituteName: String
         let printName: String
@@ -112,21 +128,19 @@ struct IOCtl {
             guard data.scanValue(offset: 0, as: UInt32.self) == self.reparseTag else {
                 throw POSIXError(.EINVAL)
             }
+            let count = try data.scanInt(offset: 4, as: UInt16.self).unwrap()
+            guard count + 8 == data.count else { throw POSIXError(.EINVAL) }
             
-            guard let substituteOffset = data.scanInt(offset: 8, as: UInt16.self),
-                let substituteLen = data.scanInt(offset: 10, as: UInt16.self),
-                let printOffset = data.scanInt(offset: 12, as: UInt16.self),
-                let printLen = data.scanInt(offset: 14, as: UInt16.self),
-                let flag = data.scanValue(offset: 16, as: UInt32.self) else {
-                throw POSIXError(.EINVAL)
-            }
+            let substituteOffset = try data.scanInt(offset: 8, as: UInt16.self).unwrap()
+            let substituteLen = try data.scanInt(offset: 10, as: UInt16.self).unwrap()
+            let printOffset = try data.scanInt(offset: 12, as: UInt16.self).unwrap()
+            let printLen = try data.scanInt(offset: 14, as: UInt16.self).unwrap()
+            let flag = try data.scanValue(offset: 16, as: UInt32.self).unwrap()
             
             let substituteData = data.dropFirst(Int(SymbolicLinkReparse.headerLength + substituteOffset)).prefix(substituteLen)
             let printData = data.dropFirst(Int(SymbolicLinkReparse.headerLength + printOffset)).prefix(printLen)
-            guard let substituteName = String(data: substituteData, encoding: .utf16LittleEndian),
-                let printName = String(data: printData, encoding: .utf16LittleEndian) else {
-                throw POSIXError(.EBADMSG)
-            }
+            let substituteName = try String(data: substituteData, encoding: .utf16LittleEndian).unwrap()
+            let printName = try String(data: printData, encoding: .utf16LittleEndian).unwrap()
             
             self.substituteName = substituteName
             self.printName = printName
@@ -152,13 +166,18 @@ struct IOCtl {
             return CollectionOfOne(data)
         }
         
-        var startIndex: Int { return 0 }
-        var endIndex: Int { return MemoryLayout.size(ofValue: self) }
-        subscript(index: Int) -> UInt8 { get { return regions[0][index] } }
-        func index(after i: Int) -> Int { return i + 1 }
+        private init() {
+            self.substituteName = ""
+            self.printName = ""
+            self.isRelative = false
+        }
+        
+        static func empty() throws -> SymbolicLinkReparse {
+            throw POSIXError(.ENODATA, description: "Invalid Reparse Point")
+        }
     }
     
-    struct MountPointReparse: DataInitializable, DataProtocol {
+    struct MountPointReparse: DataInitializable, FcntlDataProtocol {
         static private let headerLength = 16
         private let reparseTag: UInt32 = 0xA0000003
         let substituteName: String
@@ -169,22 +188,22 @@ struct IOCtl {
                 throw POSIXError(.EINVAL)
             }
             
-            guard let substituteOffset = data.scanInt(offset: 8, as: UInt16.self),
-                let substituteLen = data.scanInt(offset: 10, as: UInt16.self),
-                let printOffset = data.scanInt(offset: 12, as: UInt16.self),
-                let printLen = data.scanInt(offset: 14, as: UInt16.self) else {
-                    throw POSIXError(.EINVAL)
-            }
+            let substituteOffset = try data.scanInt(offset: 8, as: UInt16.self).unwrap()
+            let substituteLen = try data.scanInt(offset: 10, as: UInt16.self).unwrap()
+            let printOffset = try data.scanInt(offset: 12, as: UInt16.self).unwrap()
+            let printLen = try data.scanInt(offset: 14, as: UInt16.self).unwrap()
             
             let substituteData = data.dropFirst(Int(MountPointReparse.headerLength + substituteOffset)).prefix(substituteLen)
             let printData = data.dropFirst(Int(MountPointReparse.headerLength + printOffset)).prefix(printLen)
-            guard let substituteName = String(data: substituteData, encoding: .utf16LittleEndian),
-                let printName = String(data: printData, encoding: .utf16LittleEndian) else {
-                    throw POSIXError(.EBADMSG)
-            }
+            let substituteName = try String(data: substituteData, encoding: .utf16LittleEndian).unwrap()
+            let printName = try String(data: printData, encoding: .utf16LittleEndian).unwrap()
             
             self.substituteName = substituteName
             self.printName = printName
+        }
+        
+        static func empty() throws -> IOCtl.MountPointReparse {
+            throw POSIXError(.ENODATA, description: "Invalid Reparse Point")
         }
         
         var regions: CollectionOfOne<Data> {
@@ -204,10 +223,5 @@ struct IOCtl {
             data.append(substituteData)
             return CollectionOfOne(data)
         }
-        
-        var startIndex: Int { return 0 }
-        var endIndex: Int { return MemoryLayout.size(ofValue: self) }
-        subscript(index: Int) -> UInt8 { get { return regions[0][index] } }
-        func index(after i: Int) -> Int { return i + 1 }
     }*/
 }

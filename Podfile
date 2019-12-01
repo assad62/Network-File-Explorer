@@ -9,7 +9,7 @@ target 'Network File Explorer' do
   pod 'PKHUD', '~> 5.0'
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
-  pod 'SwiftEventBus', :tag => '5.0.0', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
+ 
   # Pods for Network File Explorer
 
 end
